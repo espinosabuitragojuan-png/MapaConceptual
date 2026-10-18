@@ -1,0 +1,379 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --azul: rgb(53, 53, 184);
+    --morado: rgb(127, 131, 255);
+    --oscuro: rgb(0, 3, 91);
+    --fondo: #f4f5ff;
+    --linea: #9295eb;
+    --texto: #262744;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+.contenedor {
+    width: 96%;
+    max-width: 1600px;
+    margin: auto;
+    padding: 45px 0 70px;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.subtitulo {
+    color: var(--azul);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.encabezado h1 {
+    font-size: clamp(25px, 3vw, 40px);
+    margin: 14px 0;
+}
+
+.encabezado p {
+    color: #6b6d85;
+    font-size: 14px;
+}
+
+/* MAPA */
+
+.mapa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CONCEPTO CENTRAL */
+
+.concepto-central {
+    width: min(100%, 460px);
+    padding: 28px;
+    text-align: center;
+    color: white;
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        var(--morado),
+        var(--azul),
+        var(--oscuro)
+    );
+
+    box-shadow: 0 15px 35px #3535b840;
+}
+
+.concepto-central span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+.concepto-central h2 {
+    font-size: 25px;
+    margin: 12px 0;
+}
+
+.concepto-central p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* CONECTOR PRINCIPAL */
+
+.conexion-central {
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.conexion-central::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    background: var(--linea);
+}
+
+.conexion-central span {
+    position: relative;
+    z-index: 1;
+    background: white;
+    border: 1px solid #dcdfff;
+    border-radius: 30px;
+    padding: 9px 16px;
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* RAMAS PRINCIPALES */
+
+.ramas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    padding-top: 45px;
+    position: relative;
+}
+
+.ramas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 12.5%;
+    width: 75%;
+    height: 3px;
+    background: var(--linea);
+}
+
+.rama {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.rama::before {
+    content: "";
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    width: 3px;
+    height: 45px;
+    background: var(--linea);
+}
+
+/* CONCEPTOS */
+
+.concepto {
+    width: 100%;
+    min-height: 95px;
+    background: var(--azul);
+    color: white;
+    border: 2px solid var(--oscuro);
+    border-radius: 15px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    box-shadow: 0 8px 20px #3535b830;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.concepto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px #3535b84d;
+}
+
+.concepto h2 {
+    font-size: clamp(14px, 1.4vw, 20px);
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.numero {
+    padding: 9px;
+    border-radius: 8px;
+    background: #ffffff25;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* PALABRAS DE ENLACE */
+
+.palabra-enlace {
+    margin: 28px 0;
+    padding: 9px 12px;
+    border: 1px solid #dcdfff;
+    border-radius: 20px;
+    background: #ededff;
+    color: var(--azul);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+}
+
+.palabra-enlace::before,
+.palabra-enlace::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 28px;
+    background: var(--linea);
+}
+
+.palabra-enlace::before {
+    bottom: 100%;
+}
+
+.palabra-enlace::after {
+    top: 100%;
+}
+
+/* CARACTERISTICAS DESGLOSADAS */
+
+.caracteristicas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.nodo {
+    width: 100%;
+    min-height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    text-align: center;
+    background: white;
+    border: 1px solid #dcdfff;
+    border-left: 5px solid var(--morado);
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 500;
+    position: relative;
+    box-shadow: 0 5px 15px #22226610;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.nodo:hover {
+    transform: scale(1.025);
+    box-shadow: 0 10px 25px #3535b829;
+}
+
+.nodo:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 26px;
+    width: 2px;
+    background: var(--linea);
+}
+
+/* RESULTADOS */
+
+.resultado {
+    width: 100%;
+    min-height: 125px;
+    padding: 20px;
+    background: #e9eaff;
+    border: 2px solid var(--morado);
+    border-radius: 13px;
+    color: var(--oscuro);
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.positivo {
+    border-color: var(--azul);
+    background: #e5e7ff;
+}
+
+.negativo {
+    border-color: #989afa;
+    background: #f0f0ff;
+}
+
+/* CONCLUSION */
+
+.conclusion {
+    width: min(100%, 760px);
+    margin-top: 65px;
+    padding: 28px;
+    border-radius: 17px;
+    border: 2px solid var(--morado);
+    background: white;
+    text-align: center;
+    box-shadow: 0 8px 25px #3535b81c;
+}
+
+.conclusion span {
+    color: var(--azul);
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.conclusion p {
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .ramas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 45px;
+    }
+
+    .ramas::before,
+    .rama::before {
+        display: none;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+    .contenedor {
+        width: 94%;
+        padding: 25px 0 45px;
+    }
+
+    .ramas {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 20px;
+    }
+
+    .concepto-central {
+        padding: 22px;
+    }
+
+    .concepto h2 {
+        font-size: 20px;
+    }
+
+    .nodo {
+        min-height: 75px;
+    }
+
+    .conclusion {
+        margin-top: 40px;
+    }
+}
